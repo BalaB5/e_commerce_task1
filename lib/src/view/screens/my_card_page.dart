@@ -70,7 +70,9 @@ class _MyCardPageState extends State<MyCardPage> {
               Expanded(
                 child: isWide
                     ? GridView.builder(
-                        padding: const EdgeInsets.all(10),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: constraints.maxWidth > 1200 ? 160 : 10,
+                            vertical: 10),
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
@@ -123,10 +125,10 @@ class _MyCardPageState extends State<MyCardPage> {
                     ),
                   ],
                 ),
-              )
-            ,const SizedBox(height: 16),
-        // Footer
-                    const Fooder(),
+              ),
+              const SizedBox(height: 16),
+              // Footer
+              const Fooder(),
             ],
           );
         });
